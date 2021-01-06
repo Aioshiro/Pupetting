@@ -939,7 +939,9 @@ PlayerSettings:
     daydream:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
-  cloudServicesEnabled: {}
+  cloudServicesEnabled:
+    Collab: 1
+    UNet: 1
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -952,10 +954,10 @@ PlayerSettings:
     m_VersionCode: 96
     m_VersionName: 9.6
   apiCompatibilityLevel: 3
-  cloudProjectId: 
+  cloudProjectId: de340745-3362-42b6-abf7-c407653b9f45
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: Vuforia
+  organizationId: aioshiro
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
