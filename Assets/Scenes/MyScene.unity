@@ -188,7 +188,6 @@ GameObject:
   - component: {fileID: 878626051}
   - component: {fileID: 878626050}
   - component: {fileID: 878626049}
-  - component: {fileID: 878626048}
   - component: {fileID: 878626047}
   m_Layer: 0
   m_Name: CapsuleHand_L
@@ -220,72 +219,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 878626045}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b77174815b904166ad047382f534c36, type: 3}
+  m_Script: {fileID: 11500000, guid: c057ae8396c1146c98a146b81dcc5870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OnActivate:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: StartBalls
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnDeactivate:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: StopBalls
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   Period: 0.1
-  HandModel: {fileID: 878626052}
-  FingerName: 1
-  PointingType: 3
+  HandModel: {fileID: 0}
+  PointingType: 1
   PointingDirection: {x: 0, y: 0, z: 1}
   TargetObject: {fileID: 0}
-  OnAngle: 15
-  OffAngle: 22
-  ShowGizmos: 1
---- !u!114 &878626048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 878626045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b77174815b904166ad047382f534c36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnActivate:
-    m_PersistentCalls:
-      m_Calls: []
-  OnDeactivate:
-    m_PersistentCalls:
-      m_Calls: []
-  Period: 0.1
-  HandModel: {fileID: 878626052}
-  FingerName: 0
-  PointingType: 2
-  PointingDirection: {x: 0, y: 1, z: 0}
-  TargetObject: {fileID: 0}
-  OnAngle: 25
-  OffAngle: 35
+  OnAngle: 45
+  OffAngle: 65
   ShowGizmos: 1
 --- !u!114 &878626049
 MonoBehaviour:
@@ -301,19 +250,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnActivate:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: d576429949fb0394bac2eda9931f1272, type: 3}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
   Period: 0.1
   HandModel: {fileID: 878626052}
   Thumb: 0
-  Index: 1
-  Middle: 1
-  Ring: 1
-  Pinky: 1
-  MinimumExtendedCount: 1
-  MaximumExtendedCount: 1
+  Index: 0
+  Middle: 0
+  Ring: 0
+  Pinky: 0
+  MinimumExtendedCount: 5
+  MaximumExtendedCount: 5
   ShowGizmos: 1
 --- !u!114 &878626050
 MonoBehaviour:
@@ -332,24 +292,24 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 11500000, guid: d576429949fb0394bac2eda9931f1272, type: 3}
         m_MethodName: 
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: OpenHand
           m_BoolArgument: 0
         m_CallState: 2
   OnDeactivate:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_MethodName: StopBalls
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -357,8 +317,8 @@ MonoBehaviour:
         m_CallState: 2
   Detectors:
   - {fileID: 878626049}
-  - {fileID: 878626048}
-  AddAllSiblingDetectorsOnAwake: 0
+  - {fileID: 878626047}
+  AddAllSiblingDetectorsOnAwake: 1
   GateType: 0
   Negate: 0
 --- !u!114 &878626051
@@ -648,7 +608,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1057729170}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.07, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 692216294}
@@ -817,12 +777,12 @@ MonoBehaviour:
   Period: 0.1
   HandModel: {fileID: 1827848102}
   Thumb: 0
-  Index: 1
-  Middle: 1
-  Ring: 1
-  Pinky: 1
-  MinimumExtendedCount: 1
-  MaximumExtendedCount: 1
+  Index: 0
+  Middle: 0
+  Ring: 0
+  Pinky: 0
+  MinimumExtendedCount: 5
+  MaximumExtendedCount: 5
   ShowGizmos: 1
 --- !u!114 &1827848100
 MonoBehaviour:
@@ -839,8 +799,8 @@ MonoBehaviour:
   OnActivate:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: StartBalls
+      - m_Target: {fileID: 11500000, guid: d576429949fb0394bac2eda9931f1272, type: 3}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

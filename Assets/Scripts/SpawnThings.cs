@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class SpawnThings : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void CreateFallingSphere()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        GameObject go = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        go.transform.position = new Vector3(0, 10, 0);
+        go.AddComponent<Rigidbody>();
     }
 }
