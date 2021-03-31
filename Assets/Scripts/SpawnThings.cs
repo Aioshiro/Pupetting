@@ -9,5 +9,6 @@ public class SpawnThings : MonoBehaviour
         GameObject go = GameObject.CreatePrimitive(PrimitiveType.Sphere);
         go.transform.position = new Vector3(0, 10, 0);
         go.AddComponent<Rigidbody>();
+        Debug.Log("CA MARCHE ");
     }
 }

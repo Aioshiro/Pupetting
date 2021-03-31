@@ -19,6 +19,26 @@ public class GodBoodPoses : MonoBehaviour
     private float t;
     public float transitionDelta = 0.05f;
 
+    public void switchToStand()
+    {
+        pose = Pose.Stand;
+    }
+
+    public void switchToRise()
+    {
+        pose = Pose.Rise;
+    }
+
+    public void switchToSit()
+    {
+        pose = Pose.Sit;
+    }
+    
+    public void switchToGiveRightPaw()
+    {
+        pose = Pose.GiveRightPaw;
+    }
+
     private struct PosePositions
     {
         public Vector3 BellyFront;
