@@ -39,6 +39,9 @@ public class VisibleBones : MonoBehaviour
     {
         GameObject goodBoy = GameObject.FindGameObjectWithTag("GoodBoy");
         RecursiveSkeleton(goodBoy.transform.GetChild(0).gameObject);
+
+        GameObject.Find("GoodBoy").transform.SetParent(GameObject.Find("Head").transform);
+        GameObject.Find("GoodBoy").transform.localPosition = Vector3.zero;
     }
 
     void RecursiveSkeleton(GameObject go)
@@ -47,7 +50,6 @@ public class VisibleBones : MonoBehaviour
         {
             if (go.transform.GetChild(i).gameObject.tag.Equals("GoodBoyKnuckle"))
             {
-                Debug.Log("Bone !");
                 bones.Add(new Bone(GameObject.Instantiate(bonePrefab), go.transform, go.transform.GetChild(i)));
                 RecursiveSkeleton(go.transform.GetChild(i).gameObject);
             }
