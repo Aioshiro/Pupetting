@@ -9,7 +9,7 @@ public class GodBoyPoses : MonoBehaviour
         Stand = 0,
         Sit = 1,
         Rise = 2,
-        GiveRightPaw = 3,
+        GiveLeftPaw = 3,
         Count = 4
     }
     public Pose pose = Pose.Stand;
@@ -73,7 +73,7 @@ public class GodBoyPoses : MonoBehaviour
         poses[(int)Pose.Stand] = CreatePosePosition(Pose.Stand);
         poses[(int)Pose.Sit] = CreatePosePosition(Pose.Sit);
         poses[(int)Pose.Rise] = CreatePosePosition(Pose.Rise);
-        poses[(int)Pose.GiveRightPaw] = CreatePosePosition(Pose.GiveRightPaw);
+        poses[(int)Pose.GiveLeftPaw] = CreatePosePosition(Pose.GiveLeftPaw);
 
         SetPosition(poses[(int)Pose.Stand]);
     }
@@ -165,6 +165,27 @@ public class GodBoyPoses : MonoBehaviour
                 pos.Chin = new Vector3(-0.2f, 0.3f, 0);
                 pos.Head = new Vector3(-0.5f, 0, 0);
                 break;
+            case Pose.GiveLeftPaw:
+                pos.BellyFront = new Vector3(0, 1f, 0);
+                pos.BellyRear = new Vector3(1.5f, 0, 0);
+                pos.FrontRightLeg = new Vector3(0, 0, 0.3f);
+                pos.FrontRightAnkle = new Vector3(0, -0.5f, 0);
+                pos.FrontRightPaw = pos.FrontRightAnkle;
+                pos.FrontLeftLeg = -pos.FrontRightLeg;
+                pos.FrontLeftAnkle = new Vector3(-0.3f, -0.1f, 0);
+                pos.FrontLeftPaw = new Vector3(-0.3f, 0, 0);
+                pos.RearRightLeg = pos.FrontRightLeg;
+                pos.RearRightAnkle = pos.FrontRightAnkle;
+                pos.RearRightPaw = pos.FrontRightAnkle;
+                pos.RearLeftLeg = -pos.FrontRightLeg;
+                pos.RearLeftAnkle = pos.FrontRightAnkle;
+                pos.RearLeftPaw = pos.FrontRightAnkle;
+                pos.TailBase = new Vector3(0.3f, 0, 0);
+                pos.TailMiddle = new Vector3(0.3f, -0.5f, 0);
+                pos.TailTip = pos.TailMiddle;
+                pos.Chin = new Vector3(-0.2f, 0.3f, 0);
+                pos.Head = new Vector3(-0.5f, 0, 0);
+                break;
         }
         return pos;
     }
@@ -211,5 +232,10 @@ public class GodBoyPoses : MonoBehaviour
     {
         Debug.Log("Rise !");
         pose = Pose.Rise;
+    }
+    public void GiveLeftPaw()
+    {
+        Debug.Log("Give left paw !");
+        pose = Pose.GiveLeftPaw;
     }
 }
