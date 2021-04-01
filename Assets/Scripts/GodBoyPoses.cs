@@ -200,16 +200,16 @@ public class GodBoyPoses : MonoBehaviour
     public void Stand()
     {
         Debug.Log("Stand !");
-        currentPose = Pose.Stand;
+        pose = Pose.Stand;
     }
     public void Sit()
     {
         Debug.Log("Sit !");
-        currentPose = Pose.Sit;
+        pose = Pose.Sit;
     }
     public void Rise()
     {
         Debug.Log("Rise !");
-        currentPose = Pose.Rise;
+        pose = Pose.Rise;
     }
 }
